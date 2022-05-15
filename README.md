@@ -19,7 +19,7 @@
       "userid": 인터파크 아이디,
       "password": 인터파크 비밀번호,
       "reservation_time": 티켓 예매를 수행할 시각 설정. 해당 시간에 예매 동작이 수행됨,
-      "ticket_code": 뮤지컬 예매 페이지 갔을때 해당 페이지 URL에 있는 GoodsCode,
+      "ticket_code": 뮤지컬 예매 페이지 갔을때 해당 페이지 URL의 ?GoodsCode={code} 혹은 goods/{code} 의 code값,
       "ticket_date": 티켓 날짜,
       "ticket_type": 좌석 종류(S, R, VIP)
   }
@@ -34,3 +34,7 @@
 ## 옵션
 
 * chrome 브라우저 동작하는거 보려면 코드에서 options.headless = False 
+
+## 기타
+
+* CAPTCHA가 있는 뮤지컬의 경우 headless를 True로 하고 직접 입력해주기

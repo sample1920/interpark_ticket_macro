@@ -32,6 +32,7 @@ def main():
 
         # 날짜 선택창으로 이동
         button_click(driver, By.ID, constants.ID_BUY_BUTTON)
+        confirm_alert(driver)
         driver.switch_to.window(driver.window_handles[1])
         
         select_date(driver, settings['ticket_date'])
@@ -124,7 +125,7 @@ def find_seat(driver, seat_type):
     """
     logger.info('좌석 선택')
     try:
-        button_click(driver, By.XPATH, '//a[contains(@title,"{}석")]'.format(seat_type), 5)
+        button_click(driver, By.XPATH, '//a[contains(@title,"{}석")]'.format(seat_type))
     except Exception as error:
         logger.error('Error(find_seat): {}'.format(error))
         raise Exception("좌석을 찾지 못했습니다")
